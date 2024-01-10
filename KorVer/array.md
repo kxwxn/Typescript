@@ -19,4 +19,4 @@ const supportedPlatforms = (item:Array<number>) => {
 
 supportedPlatforms(platformList)
 ```
-###### 위의 코드는 제너릭 스타일 이다.
+###### 위의 코드는 generic 스타일 이다.
