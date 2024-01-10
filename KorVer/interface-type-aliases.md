@@ -1,56 +1,32 @@
+# *Type Aliases & Interface 타입 별칭과 인터페이스*
+###### 이 방법을 사용하면 그때그때 일회성으로 타입을 지정하는게 아니라 하나의 틀을 만들어 놓고 추후에 재사용이 가능하게 끔 만들어 놓는 방법입니다.
+
+## 예제 코드
 ```typescript
-
-interface Add {
-  (num1: number, num2: number): number;
+//Type Alias
+type CoordType = {
+  x:number;
+  y:number;
 }
 
-const add: Add = (x, y) => {
-  const result = x + y;
-  console.log(result);
-  return result;
-};
-
-add(10, 27);
-
-//-------------------------------------------------------------//
-
-interface IsAdult {
-  (age: number): boolean;
+function printCoord(pt:CoordType){
+  console.log("x value is" + pt.x);
+  console.log("y value is" + pt.y)
 }
 
-const isAdult: IsAdult = (age) => {
-  // if (age > 18) {
-  //   console.log("you are good to go");
-  // } else {
-  //   console.log("you are banned");
-  // }
-  return age > 18;
-};
+//Interface
+interface CoordType2{
+  x:number;
+  y:number;
+}
 
-isAdult(33); // true
+function printCoord(pt:CoordType2){
+  console.log("x value is" + pt.x);
+  console.log("y value is" + pt.y)
+}
+
+
+printCoord({x:100,y:300})
+
 ```
 
-```typescript
-type Score = "A" | "B" | "C" | "F";
-
-interface User {
-  name: string;
-  age: number;
-  gender?: string; // ? 가 있으면 할당이 될수 있고 안될수도 있다는 것을 명시
-  readonly birthYear: number; // 읽기 전용
-  [grade: number]: Score;
-}
-
-let user: User = {
-  name: "xx",
-  age: 30,
-  birthYear: 2000,
-  1: "A",
-  2: "C",
-  3: "F",
-};
-
-user.age = 19;
-user.gender = "male";
-user.birthYear = 1999; // birthYear는 위에서 readonly로 선언 되었기 때문에 재할당이 불가능하다.
-```
