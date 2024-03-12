@@ -1,0 +1,26 @@
+{
+  "name": "Typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "build": "webpack",
+    "serve": "webpack serve"
+  },
+  "repository": "https://github.com/kxwxn/Typescript.git",
+  "author": "n0wlk <kxwxn@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lite-server": "^2.6.1",
+    "lodash": "^4.17.21",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/react": "^18.2.65",
+    "webpack": "^5.90.3"
+  }
+}
